@@ -1,24 +1,12 @@
 import React, {useState} from 'react';
 import ReactDOM from 'react-dom';
-import TicTacToe from './TicTacToe/TicTacToe';
+import TikTakToe from './TicTacToe/TikTakToe';
 import reportWebVitals from './reportWebVitals';
 
-const StarMatch = () => {
-	const [gameId, setGameId] = useState(1);
-  const [message,setMessage] = useState("");
-  const newGame =(message)=>{
-    setMessage(message);
-     setGameId(gameId + 1);
-  };
-	return <div>
-    <div>{message}</div>
-    <TicTacToe key={gameId} startNewGame={newGame}/>
-  </div>
-}
 
 ReactDOM.render(
   <React.StrictMode>
-   <StarMatch />
+   <TikTakToe />
   </React.StrictMode>,
   document.getElementById('root')
 );
