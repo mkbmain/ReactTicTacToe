@@ -3,8 +3,6 @@ import ReactDOM from 'react-dom';
 import TicTacToe from './TicTacToe/TicTacToe';
 import reportWebVitals from './reportWebVitals';
 
-
-
 const StarMatch = () => {
 	const [gameId, setGameId] = useState(1);
   const [message,setMessage] = useState("");
@@ -17,7 +15,6 @@ const StarMatch = () => {
     <TicTacToe key={gameId} startNewGame={newGame}/>
   </div>
 }
-
 
 ReactDOM.render(
   <React.StrictMode>
