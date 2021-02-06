@@ -3,14 +3,6 @@ import ReactDOM from 'react-dom';
 import TicTacToe from './TicTacToe/TicTacToe';
 import reportWebVitals from './reportWebVitals';
 
-const Button = (props)=>
-{
-   const [title,setTitle] = useState("-");
- return <button style={{"height": "50px", "width" : "50px", "margin" : "10px"}}    
-          onClick={()=>{if(title == "-"){setTitle( props.fire(props.number))}}}>  
-   <div  style={{ visibility: title !='-' ? 'visible' : 'hidden' }}>{title}</div>       
-   </button>
-};
 
 
 const StarMatch = () => {
