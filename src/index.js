@@ -1,12 +1,35 @@
-import React from 'react';
+import React, {useState} from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import TicTacToe from './TicTacToe/TicTacToe';
 import reportWebVitals from './reportWebVitals';
+
+const Button = (props)=>
+{
+   const [title,setTitle] = useState("-");
+ return <button style={{"height": "50px", "width" : "50px", "margin" : "10px"}}    
+          onClick={()=>{if(title == "-"){setTitle( props.fire(props.number))}}}>  
+   <div  style={{ visibility: title !='-' ? 'visible' : 'hidden' }}>{title}</div>       
+   </button>
+};
+
+
+const StarMatch = () => {
+	const [gameId, setGameId] = useState(1);
+  const [message,setMessage] = useState("");
+  const newGame =(message)=>{
+    setMessage(message);
+     setGameId(gameId + 1);
+  };
+	return <div>
+    <div>{message}</div>
+    <TicTacToe key={gameId} startNewGame={newGame}/>
+  </div>
+}
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+   <StarMatch />
   </React.StrictMode>,
   document.getElementById('root')
 );
