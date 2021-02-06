@@ -13,7 +13,7 @@ const TicTacToe = (props)=>
     winCombination.map(test => {
       if(myArray[test[0]] ==myArray[test[1]] && myArray[test[0]] ==myArray[test[2]]  )
       {
-        props.startNewGame("Winner Was: "+myArray[0]);
+        props.startNewGame("Winner Was: "+myArray[test[1]]);
       }
   });
   }
