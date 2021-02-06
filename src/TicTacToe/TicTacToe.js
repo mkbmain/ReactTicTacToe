@@ -10,6 +10,20 @@ const TicTacToe = (props)=>
   
   const checkWinner=()=>
   {
+    const details = myArray.reduce( (acc, curr)=> {
+  if (typeof acc[curr] == 'undefined') {
+    acc[curr] = 1;
+  } else {
+    acc[curr] += 1;
+  }
+  return acc;
+}, {});
+
+    if (details.O + details.X == 9)
+    {
+      props.startNewGame("Draw");
+    }
+
     winCombination.map(test => {
       if(myArray[test[0]] ==myArray[test[1]] && myArray[test[0]] ==myArray[test[2]]  )
       {
